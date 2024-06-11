@@ -1,0 +1,1 @@
+To ensure scripts can be executed, use `chmod +x` before running them. This grants execute permission, allowing standalone execution.
