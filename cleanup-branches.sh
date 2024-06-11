@@ -19,11 +19,6 @@ git fetch --all --prune
 grep_pattern=$(printf "|%s" "${branches_to_keep[@]}")
 grep_pattern="origin/(${grep_pattern:1})"
 
-# Delete all remote branches except 'main' and the branches to keep
-for branch in $(git branch -r | grep -v '\->' | grep -vE "$grep_pattern"); do
-  git push origin --delete ${branch#origin/}
-done
-
 # Delete all local branches except 'main' and the branches to keep
 for branch in $(git branch | grep -vE "^\*|(${branches_to_keep[*]})"); do
   git branch -D $branch
