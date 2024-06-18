@@ -26,3 +26,4 @@ done
 
 # Switch back to the original branch after pulling changes for all branches
 git checkout main
+git pull origin main
